@@ -30,28 +30,12 @@ Documentation MUST continue to identify OpenSpec branches with the `opsx/<change
 - **WHEN** it lists their branch conventions
 - **THEN** Speckit MUST use `speckit/NNN-<short-name>` and OpenSpec MUST use `opsx/<change-name>`
 
-## MODIFIED Requirements
-
 ### Requirement: Branch examples are internally consistent
 
 All current website and repository contributor guidance that describes Speckit branch names MUST use the new prefix, while legitimate numbered directory paths and clearly labeled historical references MAY retain their original form.
-
-Previously: Guidance used the unprefixed `NNN-<short-name>` format for current Speckit branches.
 
 #### Scenario: Repository guidance is reviewed after the update
 
 - **GIVEN** a reviewer searches current contributor and website workflow guidance
 - **WHEN** they inspect each Speckit branch example
-- **THEN** every current example MUST use `speckit/NNN-<short-name>` and no current example MAY present the unprefixed form as recommended
-
-## REMOVED Requirements
-
-### Requirement: Unprefixed current Speckit branch format
-
-The obsolete guidance that presents `NNN-<short-name>` as the current format MUST be removed or replaced. Existing branch names themselves are not removed or renamed.
-
-#### Scenario: Existing branch names remain usable
-
-- **GIVEN** an existing branch uses the unprefixed `NNN-<short-name>` format
-- **WHEN** the documentation convention is updated
-- **THEN** the branch MUST remain usable and the documentation MUST describe it as an existing branch rather than a new-branch recommendation
+- **THEN** every current example MUST use `speckit/NNN-<short-name>`, no current example MAY present the unprefixed form as recommended, and existing unprefixed branches MUST remain documented as usable

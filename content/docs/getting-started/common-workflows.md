@@ -48,7 +48,7 @@ toc: true
 
 ### Branch Safety
 
-`/unleash` works with both Speckit (`speckit/NNN-*`, also accepting legacy `NNN-*`) and OpenSpec (`opsx/*`) feature branches. It never runs on `main`. For Speckit branches, it validates that `spec.md` exists. For OpenSpec branches, it detects the change name from the branch (`opsx/<name>`) and reads tasks from `openspec/changes/<name>/tasks.md`.
+`/uf.unleash` works with both Speckit (`speckit/NNN-*`, also accepting legacy `NNN-*`) and OpenSpec (`opsx/*`) feature branches. It never runs on `main`. For Speckit branches, it validates that `spec.md` exists. For OpenSpec branches, it detects the change name from the branch (`opsx/<name>`) and reads tasks from `openspec/changes/<name>/tasks.md`.
 
 After `/uf.unleash` completes, the demo step suggests running `/uf.finale` to commit, push, and create a PR.
 
