@@ -20,7 +20,7 @@
 - [x] 2.1 [P] Update `AGENTS.md` branch conventions and examples to use `speckit/NNN-<short-name>`, explain that existing branches are not renamed, and preserve the `opsx/<name>` OpenSpec convention.
 - [x] 2.2 [P] Update `content/docs/contributing/_index.md` contributor branch setup guidance to use the prefixed Speckit format and compatibility wording.
 - [x] 2.3 [P] Update `content/blog/the-8-phase-pipeline.md` current branch naming guidance and example while preserving the article's historical or explanatory context where applicable.
-- [x] 2.4 [P] Update additional current guidance discovered during task 1.2 in `content/docs/getting-started/developer.md`, `content/docs/getting-started/common-workflows.md`, `.opencode/commands/uf.agent-brief.md`, `.opencode/commands/uf.unleash.md`, `.opencode/commands/uf.finale.md`, `.specify/templates/spec-template.md`, and `.specify/templates/plan-template.md`; keep explicit legacy compatibility notes and leave runtime validation in `.specify/scripts/bash/common.sh` out of this documentation-only change.
+- [x] 2.4 [P] Update additional current guidance discovered during task 1.2 in `content/docs/getting-started/developer.md`, `content/docs/getting-started/common-workflows.md`, `.opencode/commands/uf.agent-brief.md`, `.opencode/commands/uf.unleash.md`, `.opencode/commands/speckit.specify.md`, `.opencode/commands/uf.finale.md`, `.specify/templates/spec-template.md`, and `.specify/templates/plan-template.md`; keep explicit legacy compatibility notes. Runtime validation in `.specify/scripts/bash` is handled in section 4.
 
 ## 3. Validate the Documentation Change
 

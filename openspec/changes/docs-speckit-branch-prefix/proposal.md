@@ -8,6 +8,7 @@ Issue [#205](https://github.com/unbound-force/website/issues/205) tracks the Spe
 - Explain that the `speckit/` prefix applies to newly created feature branches.
 - State that existing branches are not renamed and remain usable.
 - Keep OpenSpec's existing `opsx/<name>` convention distinct and unchanged.
+- Backport `speckit/` prefix handling into the vendored `.specify/scripts/bash` validation and scaffolding scripts so the documented convention passes the repository's own branch gate.
 - Review all matching website documentation references so the published guidance is internally consistent.
 
 ## Capabilities
@@ -46,7 +47,7 @@ The change improves the self-describing workflow artifacts that contributors use
 
 **Assessment**: PASS
 
-This is a documentation-only update and adds no mandatory dependency. Speckit and OpenSpec remain independently documented and usable.
+This change updates documentation and backports branch-prefix handling into the vendored Speckit scripts. It adds no mandatory dependency: Speckit and OpenSpec remain independently documented and usable, and the scripts continue to accept legacy branches.
 
 ### III. Observable Quality
 

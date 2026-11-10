@@ -39,3 +39,19 @@ All current website and repository contributor guidance that describes Speckit b
 - **GIVEN** a reviewer searches current contributor and website workflow guidance
 - **WHEN** they inspect each Speckit branch example
 - **THEN** every current example MUST use `speckit/NNN-<short-name>`, no current example MAY present the unprefixed form as recommended, and existing unprefixed branches MUST remain documented as usable
+
+### Requirement: Speckit branch validation accepts the prefix
+
+The vendored Speckit validation and scaffolding scripts MUST accept branches named `speckit/NNN-<short-name>` and MUST continue to accept legacy `NNN-<short-name>` branches, resolving both to the unprefixed `specs/NNN-<short-name>/` directory.
+
+#### Scenario: Contributor runs the Speckit gate on a prefixed branch
+
+- **GIVEN** a branch named `speckit/012-example` with `specs/012-example/spec.md`
+- **WHEN** the contributor runs `.specify/scripts/bash/check-prerequisites.sh`
+- **THEN** branch validation MUST pass and the feature directory MUST resolve to `specs/012-example/`
+
+#### Scenario: Contributor creates a new Speckit feature
+
+- **GIVEN** no branch exists for the requested feature
+- **WHEN** the contributor runs `.specify/scripts/bash/create-new-feature.sh`
+- **THEN** the created branch MUST be named `speckit/NNN-<short-name>` and the created directory MUST be `specs/NNN-<short-name>/`

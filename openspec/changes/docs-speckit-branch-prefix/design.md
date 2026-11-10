@@ -16,7 +16,7 @@ The affected references are primarily `AGENTS.md`, `content/docs/contributing/_i
 
 ### Non-Goals
 
-- Do not change Speckit command prompt implementations or OpenSpec tooling.
+- Do not change Speckit command behavior beyond what `speckit/` branch-prefix handling requires, and do not change OpenSpec tooling.
 - Do not rename existing Git branches.
 - Do not modify CI, templates, styles, or navigation unless a stale branch example is found in one of those files.
 - Do not introduce a new website page solely for this convention correction.
