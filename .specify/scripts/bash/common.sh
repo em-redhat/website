@@ -12,17 +12,20 @@ get_repo_root() {
     fi
 }
 
-# Get current branch, with fallback for non-git repositories
+# Get current feature name (NNN-<name>), with fallback for non-git repositories.
+# The speckit/ prefix is stripped so consumers map the branch to specs/NNN-<name>/.
 get_current_branch() {
     # First check if SPECIFY_FEATURE environment variable is set
     if [[ -n "${SPECIFY_FEATURE:-}" ]]; then
-        echo "$SPECIFY_FEATURE"
+        echo "${SPECIFY_FEATURE#speckit/}"
         return
     fi
 
     # Then check git if available
     if git rev-parse --abbrev-ref HEAD >/dev/null 2>&1; then
-        git rev-parse --abbrev-ref HEAD
+        local branch
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        echo "${branch#speckit/}"
         return
     fi
 
@@ -89,6 +92,9 @@ find_feature_dir_by_prefix() {
     local repo_root="$1"
     local branch_name="$2"
     local specs_dir="$repo_root/specs"
+
+    # Strip speckit/ prefix if present before matching
+    branch_name="${branch_name#speckit/}"
 
     # Extract numeric prefix from branch (e.g., "004" from "004-whatever")
     if [[ ! "$branch_name" =~ ^([0-9]{3})- ]]; then
