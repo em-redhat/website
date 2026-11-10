@@ -34,7 +34,7 @@ The affected references are primarily `AGENTS.md`, `content/docs/contributing/_i
 
 5. **Use documentation validation as the quality gate.** The implementation will verify no stale user-facing branch examples remain, confirm required new examples exist, and run `npm run build`. This supports the proposal's constitution assessment: artifact-based collaboration remains intact, no coupling is added, and quality is observable through deterministic checks.
 
-6. **Backport the branch gate instead of documenting around it.** The vendored `.specify/scripts/bash` scripts predate the `speckit/` prefix: `common.sh` rejects branches lacking a three-digit prefix and `create-new-feature.sh` emits unprefixed names. Publishing the new convention while the repository's own hard gate rejects it would make the guidance false. The prefix handling is therefore backported into those two scripts, while the remaining vendored scripts are left untouched to avoid pulling unrelated upstream refactoring into this change.
+6. **Backport the branch gate instead of documenting around it.** The vendored `.specify/scripts/bash` scripts predate the `speckit/` prefix: `common.sh` rejects branches lacking a three-digit prefix and `create-new-feature.sh` emits unprefixed names. Publishing the new convention while the repository's own hard gate rejects it would make the guidance false. Issue #205 explicitly covers branch detection, checkout, and listing logic, so the prefix handling is backported into those two scripts, while the remaining vendored scripts are left untouched to avoid pulling unrelated upstream refactoring into this change.
 
 ## Risks / Trade-offs
 
