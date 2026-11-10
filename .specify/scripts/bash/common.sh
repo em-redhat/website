@@ -73,9 +73,9 @@ check_feature_branch() {
     fi
 
     # Accept speckit/NNN-<name> branches as well as legacy NNN-<name>
-    branch="${branch#speckit/}"
-    if [[ ! "$branch" =~ ^[0-9]{3}- ]]; then
-        echo "ERROR: Not on a feature branch. Current feature: $branch" >&2
+    local feature="${branch#speckit/}"
+    if [[ ! "$feature" =~ ^[0-9]{3}- ]]; then
+        echo "ERROR: Not on a feature branch. Current branch: $branch" >&2
         echo "Feature branches should be named like: speckit/001-feature-name (legacy 001-feature-name is also accepted)" >&2
         return 1
     fi

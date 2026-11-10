@@ -61,7 +61,7 @@ EXAMPLES:
   # Check implementation prerequisites (plan.md + tasks.md required)
   ./check-prerequisites.sh --json --require-tasks --include-tasks
   
-  # Get feature paths only (no validation)
+  # Get feature paths only (skips plan/tasks checks)
   ./check-prerequisites.sh --paths-only
   
 EOF
@@ -85,7 +85,7 @@ check_feature_branch "$CURRENT_BRANCH" "$HAS_GIT" || exit 1
 # If paths-only mode, output paths and exit (support JSON + paths-only combined)
 if $PATHS_ONLY; then
     if $JSON_MODE; then
-        # Minimal JSON paths payload (no validation performed)
+        # Minimal JSON paths payload (plan/tasks checks skipped)
         printf '{"REPO_ROOT":"%s","BRANCH":"%s","FEATURE_DIR":"%s","FEATURE_SPEC":"%s","IMPL_PLAN":"%s","TASKS":"%s"}\n' \
             "$REPO_ROOT" "$CURRENT_BRANCH" "$FEATURE_DIR" "$FEATURE_SPEC" "$IMPL_PLAN" "$TASKS"
     else

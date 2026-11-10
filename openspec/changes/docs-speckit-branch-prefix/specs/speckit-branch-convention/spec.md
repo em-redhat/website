@@ -47,7 +47,7 @@ The vendored Speckit validation and scaffolding scripts MUST accept branches nam
 #### Scenario: Contributor runs the Speckit gate on a prefixed branch
 
 - **GIVEN** a branch named `speckit/012-example` with `specs/012-example/spec.md`
-- **WHEN** the contributor runs `.specify/scripts/bash/check-prerequisites.sh`
+- **WHEN** the contributor runs `.specify/scripts/bash/check-prerequisites.sh --json --paths-only`
 - **THEN** branch validation MUST pass and the feature directory MUST resolve to `specs/012-example/`
 
 #### Scenario: Contributor creates a new Speckit feature

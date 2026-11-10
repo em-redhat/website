@@ -33,6 +33,6 @@
 - [x] 4.1 Backport `speckit/` prefix stripping into `.specify/scripts/bash/common.sh` so `speckit/NNN-<name>` branches resolve to `specs/NNN-<name>/`.
 - [x] 4.2 Update `.specify/scripts/bash/create-new-feature.sh` to emit `speckit/NNN-<name>` branch names while keeping the feature directory unprefixed.
 - [x] 4.3 Smoke-test `check-prerequisites.sh` and `create-new-feature.sh` against a `speckit/NNN-<name>` branch.
+- [x] 4.4 Clarify the `--paths-only` help text in `.specify/scripts/bash/check-prerequisites.sh` to state that plan/tasks checks are skipped while branch validation still runs.
 
 <!-- spec-review: passed -->
-<!-- code-review: passed -->
