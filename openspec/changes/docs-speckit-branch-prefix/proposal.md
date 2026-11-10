@@ -15,7 +15,7 @@ Issue [#205](https://github.com/unbound-force/website/issues/205) tracks the Spe
 
 ### New Capabilities
 
-- `speckit-branch-convention-documentation`: Users can find the current Speckit branch prefix and compatibility guidance in the website documentation.
+- `speckit-branch-convention`: Users can find the current Speckit branch prefix and compatibility guidance, and the repository's Speckit scripts accept that prefix.
 
 ### Modified Capabilities
 

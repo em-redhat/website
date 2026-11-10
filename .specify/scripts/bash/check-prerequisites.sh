@@ -11,7 +11,7 @@
 #   --json              Output in JSON format
 #   --require-tasks     Require tasks.md to exist (for implementation phase)
 #   --include-tasks     Include tasks.md in AVAILABLE_DOCS list
-#   --paths-only        Only output path variables (no validation)
+#   --paths-only        Only output path variables (skips plan/tasks checks)
 #   --help, -h          Show help message
 #
 # OUTPUTS:
@@ -51,7 +51,7 @@ OPTIONS:
   --json              Output in JSON format
   --require-tasks     Require tasks.md to exist (for implementation phase)
   --include-tasks     Include tasks.md in AVAILABLE_DOCS list
-  --paths-only        Only output path variables (no prerequisite validation)
+  --paths-only        Only output path variables (skips plan/tasks checks)
   --help, -h          Show this help message
 
 EXAMPLES:
