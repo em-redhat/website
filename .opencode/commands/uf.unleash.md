@@ -116,10 +116,10 @@ git rev-parse --abbrev-ref HEAD
   root:
 
   ```bash
-  .specify/scripts/bash/check-prerequisites.sh --json --require-spec
+  .specify/scripts/bash/check-prerequisites.sh --json --paths-only
   ```
 
-  If the script fails or no spec.md is found: **STOP**
+  If the script fails or `FEATURE_SPEC` from the JSON output does not exist: **STOP**
   with error:
   > "No spec.md found in the feature directory. Run
   > `/speckit.specify` first."
@@ -646,7 +646,7 @@ memory.
 3. **If Dewey is available** (`dewey_store_learning` tool
    exists): store each learning via `dewey_store_learning`
    with tags including:
-   - The branch name (e.g., `018-unleash-command`)
+   - The branch name (e.g., `speckit/018-unleash-command`)
    - The current date (e.g., `2026-03-29`)
    - The learning category (e.g., `pattern`, `gotcha`,
      `review-insight`, `file-specific`)

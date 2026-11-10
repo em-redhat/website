@@ -257,8 +257,8 @@ BRANCH_NAME="speckit/${FEATURE_NUM}-${BRANCH_SUFFIX}"
 MAX_BRANCH_LENGTH=244
 if [ ${#BRANCH_NAME} -gt $MAX_BRANCH_LENGTH ]; then
     # Calculate how much we need to trim from suffix
-    # Account for: speckit/ (8) + feature number (3) + hyphen (1) = 12 chars
-    MAX_SUFFIX_LENGTH=$((MAX_BRANCH_LENGTH - 12))
+    # Account for: speckit/ (8) + feature number + hyphen (1)
+    MAX_SUFFIX_LENGTH=$((MAX_BRANCH_LENGTH - 8 - ${#FEATURE_NUM} - 1))
     
     # Truncate suffix at word boundary if possible
     TRUNCATED_SUFFIX=$(echo "$BRANCH_SUFFIX" | cut -c1-$MAX_SUFFIX_LENGTH)
