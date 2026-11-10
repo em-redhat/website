@@ -28,9 +28,9 @@ Issue [#205](https://github.com/unbound-force/website/issues/205) tracks the Spe
 ## Impact
 
 - Affected content includes `AGENTS.md`, the contributing documentation, the Speckit pipeline article, and any other user-facing pages found during implementation that document the old format.
-- No Hugo templates, runtime code, CI configuration, or Speckit tooling changes are required.
+- The vendored `.specify/scripts/bash` validation and scaffolding scripts are backported with `speckit/` prefix handling so the documented convention resolves to `specs/NNN-<name>/` in this repository. No Hugo templates or CI configuration changes are required.
 - The implementation must preserve links, frontmatter, navigation, and the distinction between Speckit and OpenSpec branch namespaces.
-- Validation consists of searching for stale branch examples and running the website build.
+- Validation consists of searching for stale branch examples, running the website build, and smoke-testing the branch gate on a `speckit/NNN-<name>` branch.
 
 ## Constitution Alignment
 

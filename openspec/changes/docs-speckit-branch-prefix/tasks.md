@@ -28,5 +28,11 @@
 - [x] 3.2 Run `npm run build` and confirm the Hugo production build succeeds without broken-content or rendering errors.
 - [x] 3.3 Verify constitution alignment: the final documentation remains artifact-based, introduces no mandatory dependencies, exposes the convention through deterministic searchable content, and is independently verifiable without external services.
 
+## 4. Synchronize Speckit Branch Validation
+
+- [x] 4.1 Backport `speckit/` prefix stripping into `.specify/scripts/bash/common.sh` so `speckit/NNN-<name>` branches resolve to `specs/NNN-<name>/`.
+- [x] 4.2 Update `.specify/scripts/bash/create-new-feature.sh` to emit `speckit/NNN-<name>` branch names while keeping the feature directory unprefixed.
+- [x] 4.3 Smoke-test `check-prerequisites.sh` and `create-new-feature.sh` against a `speckit/NNN-<name>` branch.
+
 <!-- spec-review: passed -->
 <!-- code-review: passed -->

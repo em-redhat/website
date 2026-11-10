@@ -16,10 +16,11 @@ The affected references are primarily `AGENTS.md`, `content/docs/contributing/_i
 
 ### Non-Goals
 
-- Do not change Speckit or OpenSpec command implementations.
+- Do not change Speckit command prompt implementations or OpenSpec tooling.
 - Do not rename existing Git branches.
 - Do not modify CI, templates, styles, or navigation unless a stale branch example is found in one of those files.
 - Do not introduce a new website page solely for this convention correction.
+- Do not perform a wholesale synchronization of the vendored `.specify/scripts/bash` scripts; only the `speckit/` prefix handling is backported.
 
 ## Decisions
 
@@ -33,8 +34,11 @@ The affected references are primarily `AGENTS.md`, `content/docs/contributing/_i
 
 5. **Use documentation validation as the quality gate.** The implementation will verify no stale user-facing branch examples remain, confirm required new examples exist, and run `npm run build`. This supports the proposal's constitution assessment: artifact-based collaboration remains intact, no coupling is added, and quality is observable through deterministic checks.
 
+6. **Backport the branch gate instead of documenting around it.** The vendored `.specify/scripts/bash` scripts predate the `speckit/` prefix: `common.sh` rejects branches lacking a three-digit prefix and `create-new-feature.sh` emits unprefixed names. Publishing the new convention while the repository's own hard gate rejects it would make the guidance false. The prefix handling is therefore backported into those two scripts, while the remaining vendored scripts are left untouched to avoid pulling unrelated upstream refactoring into this change.
+
 ## Risks / Trade-offs
 
 - Some historical articles may intentionally describe an older convention. Those references should be updated when presented as current guidance, while historical context may be retained only if clearly labeled.
 - `AGENTS.md` contains repository governance rather than end-user site content, but leaving its branch instructions stale would create conflicting contributor guidance; it should therefore be updated alongside published docs.
 - A documentation-only change has no automated content test suite, so the build and targeted searches are the practical regression checks.
+- The backported scripts are vendored scaffolding. A later wholesale synchronization from the canonical repository may supersede these edits; the backport keeps behavior aligned with the canonical prefix handling in the meantime.
